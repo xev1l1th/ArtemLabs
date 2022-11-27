@@ -1,0 +1,5 @@
+security:
+  users:
+    -
+      username: test-user
+      password: 12345
