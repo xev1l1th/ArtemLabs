@@ -3,8 +3,11 @@ package ru.artem.lab2;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 import ru.artem.lab1.Author;
 import ru.artem.lab1.Book;
@@ -17,14 +20,21 @@ import ru.artem.lab2.exceptions.ReaderHaveNotReadThisBookException;
 @Data
 @EqualsAndHashCode
 @ToString
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Reader {
 
     private String firstName;
     private String secondName;
-    private List<Book> booksRead;
-    private List<Book> booksHeReading;
-    private List<Author> favouriteAuthors;
-    private List<Class<? extends Book>> preferences;
+    @Builder.Default
+    private List<Book> booksRead = new ArrayList<>();
+    @Builder.Default
+    private List<Book> booksHeReading = new ArrayList<>();
+    @Builder.Default
+    private List<Author> favouriteAuthors = new ArrayList<>();
+    @Builder.Default
+    private List<Class<? extends Book>> preferences = new ArrayList<>();
 
     public Reader(String firstName, String secondName) {
         this.firstName = firstName;

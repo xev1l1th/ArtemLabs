@@ -9,4 +9,8 @@ public interface ReaderRepo {
 
     void addReader(Reader reader);
 
+    void update(Reader reader);
+
+    void delete(Reader Reader);
+
 }

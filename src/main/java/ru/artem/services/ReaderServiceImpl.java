@@ -21,4 +21,14 @@ public class ReaderServiceImpl implements ReaderService{
     public void addReader(Reader reader){
         readerRepo.addReader(reader);
     }
+
+    @Override
+    public void update(Reader reader) {
+        readerRepo.update(reader);
+    }
+
+    @Override
+    public void delete(Reader reader) {
+        readerRepo.delete(reader);
+    }
 }

@@ -9,4 +9,7 @@ public interface ReaderService {
 
     void addReader(Reader reader);
 
+    void update(Reader reader);
+
+    void delete(Reader reader);
 }
